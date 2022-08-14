@@ -17,5 +17,14 @@
 #	rm *.o *.exe
 #	#rm removes a file, * is a wildcard, so we remove any file that ends with .o or .exe
 #
-mytarget: driver.c driver.h car.c car.h
-	gcc driver.c driver.h car.c car.h -Wvla -Wall 
+all: driver.o car.o
+	gcc driver.o car.o -Wvla -Wall -o myprog
+
+driver.o: driver.c driver.h
+	gcc driver.c driver.h -c -o driver.o
+
+car.o: car.c car.h
+	gcc car.c car.h -c -o car.o
+
+clean:
+	rm *.o *.exe
