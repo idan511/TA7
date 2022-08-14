@@ -17,14 +17,18 @@
 #	rm *.o *.exe
 #	#rm removes a file, * is a wildcard, so we remove any file that ends with .o or .exe
 #
+.PHONY: all, clean
+CC = gcc
+CCFLAGS = -Wall -Wvla -Wextra
+
 all: driver.o car.o
-	gcc driver.o car.o -Wvla -Wall -o myprog
+	$(CC) driver.o car.o $(CCFLAGS) -o myprog
 
 driver.o: driver.c driver.h
-	gcc driver.c driver.h -c
+	$(CC) driver.c driver.h $(CCFLAGS) -c
 
 car.o: car.c car.h
-	gcc car.c car.h -c
+	$(CC) car.c car.h $(CCFLAGS) -c
 
 clean:
 	rm *.o *.exe
