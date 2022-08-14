@@ -17,7 +17,7 @@
 #	rm *.o *.exe
 #	#rm removes a file, * is a wildcard, so we remove any file that ends with .o or .exe
 #
-.PHONY: all, clean
+.PHONY: all, clean, car.o
 CC = gcc
 CCFLAGS = -Wall -Wvla -Wextra
 
