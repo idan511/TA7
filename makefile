@@ -21,10 +21,10 @@ all: driver.o car.o
 	gcc driver.o car.o -Wvla -Wall -o myprog
 
 driver.o: driver.c driver.h
-	gcc driver.c driver.h -c -o driver.o
+	gcc driver.c driver.h -c
 
 car.o: car.c car.h
-	gcc car.c car.h -c -o car.o
+	gcc car.c car.h -c
 
 clean:
 	rm *.o *.exe
